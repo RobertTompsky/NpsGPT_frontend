@@ -1,0 +1,30 @@
+.message {
+    padding: 14px;
+    font-size: 14px;
+    opacity: 0.8;
+    max-width: 100%;
+    overflow-wrap: break-word;
+
+    .markDown {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    h3,
+    p {
+        margin: 0;
+    }
+}
+
+.sended {
+    align-self: flex-end;
+    background-color: #1a1a1b;
+    color: #00BFFF;
+}
+
+.received {
+    align-self: flex-start;
+    color: #00FF00;
+    background-color: #252526;
+}

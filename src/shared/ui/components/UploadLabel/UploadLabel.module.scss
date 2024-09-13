@@ -1,0 +1,31 @@
+.uploadLabel {
+    background-color:  #252526;
+    border: none;
+    position: relative;
+    color: #333333;
+    width: 100%;
+    color: white;
+    font-family: "Anonymous Pro", monospace;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    div {
+        padding: 8px;
+    }
+
+    .uploadLabel_btn {
+        background-color: #FFA500;
+
+        &:hover {
+            outline: none;
+            box-shadow: 0 0 0 0 #fff inset, #FFA500 0 0 0 0.5px;
+        }
+    }
+   
+
+}

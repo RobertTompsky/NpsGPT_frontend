@@ -1,0 +1,13 @@
+.container {
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    padding: var(--padding-default) 0;
+}
+
+.centeredChildren {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

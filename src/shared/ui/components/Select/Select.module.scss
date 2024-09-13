@@ -1,0 +1,33 @@
+.select {
+    background-color:  #252526;
+    border: none;
+    position: relative;
+    color: white;
+    font-family: "Anonymous Pro", monospace;
+    width: 100%;
+
+    &:focus{
+        outline: none;
+        box-shadow: 0 0 0 0 #fff inset, #33FF33 0 0 0 0.25px;
+    }
+}
+
+.small {
+    font-size: 14px;
+    padding: 8px 8px;
+}
+
+.medium {
+    font-size: 14px;
+    padding: 4px 8px;
+}
+
+.large {
+    font-size: 20px;
+    padding: 14px 14px;
+    background-size: 20px 20px;
+
+    &:focus{
+        background-size: 20px 20px;
+    }
+}

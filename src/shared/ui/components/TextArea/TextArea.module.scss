@@ -1,0 +1,31 @@
+.textArea {
+    background-color:  #252526;
+    border: none;
+    position: relative;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #333333;
+    width: 100%;
+    color: white;
+    font-family: "Anonymous Pro", monospace;
+    
+    &:focus{
+        outline: none;
+        box-shadow: 0 0 0 0 #fff inset, #33FF33 0 0 0 0.25px;
+    }
+}
+
+.small {
+    font-size: 14px;
+    padding: 8px 8px;
+}
+
+.medium {
+    font-size: 16px;
+    padding: 4px 8px;
+}
+
+.large {
+    font-size: 20px;
+    padding: 14px 14px;
+}

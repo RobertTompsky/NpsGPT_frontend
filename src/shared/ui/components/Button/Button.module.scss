@@ -1,0 +1,59 @@
+.button {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border: 0;
+    color: white;
+    line-height: 1.15;
+    font-family: "Anonymous Pro", monospace;
+        
+    &:disabled {
+        opacity: 0.5;
+        box-shadow: none;
+        cursor: auto;
+    }
+
+}
+
+.default {
+    background: #FFA500;
+
+    &:hover{
+        outline: none;
+        box-shadow: 0 0 0 0 #fff inset, #FFA500 0 0 0 0.5px;
+    }
+}
+
+.approve {
+    background:  #33FF33;
+
+    &:hover{
+        outline: none;
+        box-shadow: 0 0 0 0 #fff inset, #33FF33 0 0 0 0.5px;
+    }
+}
+
+.delete {
+    background: #FF3333;
+
+    &:hover{
+        outline: none;
+        box-shadow: 0 0 0 0 #fff inset, #FF3333 0 0 0 0.5px;
+    }
+}
+
+.small {
+    padding: 4px 8px;
+    font-size: 14px;
+}
+
+.medium {
+    padding: 12px 24px;
+    font-size: 16px;
+}
+
+.large {
+    padding: 14px 28px;
+    font-size: 20px;
+}

@@ -1,0 +1,21 @@
+.link {
+    text-decoration: none;
+    color: var(--color-primary);
+
+    &:hover {
+        background:  #33FF33;
+        color: black;
+    }
+}
+
+.small {
+    font-size: 14px;
+}
+
+.medium {
+    font-size: 18px;
+}
+
+.large {
+    font-size: 22px;
+}

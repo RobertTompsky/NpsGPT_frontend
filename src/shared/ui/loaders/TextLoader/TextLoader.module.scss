@@ -1,0 +1,32 @@
+@keyframes dots {
+
+    0%,
+    20% {
+        content: '.';
+    }
+
+    40% {
+        content: '..';
+    }
+
+    60% {
+        content: '...';
+    }
+
+    80%,
+    100% {
+        content: '';
+    }
+}
+
+.textLoader {
+    display: inline-block;
+    position: relative;
+    font-size: 14px;
+}
+
+.textLoader::after {
+    display: inline-block;
+    content: '';
+    animation: dots 1.5s infinite step-start;
+}

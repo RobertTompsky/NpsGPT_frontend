@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    height: var(--header-height);
+
+    &_content {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .header_title {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header_nav {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            gap: 30px;
+        }
+    }
+}
