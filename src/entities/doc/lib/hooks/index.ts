@@ -1,0 +1,1 @@
+export { useDocInfo } from "./useDocInfo/useDocInfo";

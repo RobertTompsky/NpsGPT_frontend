@@ -1,0 +1,1 @@
+export type { IDocInfo, IDocType } from './types/types'

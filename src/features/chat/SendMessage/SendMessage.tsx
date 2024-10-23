@@ -1,7 +1,13 @@
 import { Button, TextArea } from '@/shared/ui/components';
 import React, { useState } from 'react';
 import styles from './SendMessage.module.scss'
-import { addChatMessage, IChatFeatureProps, IMessage, selectActiveChatByType, setChatAIProcessing } from '@/entities/chat/model';
+import { 
+    addChatMessage, 
+    IChatFeatureProps, 
+    IMessage, 
+    selectActiveChatByType, 
+    setChatAIProcessing 
+} from '@/entities/chat/model';
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks';
 import { sendMessageThunk } from '@/entities/chat/api';
 import { streamResponse } from '@/entities/chat/lib';
@@ -37,25 +43,19 @@ export const SendMessage: React.FC<IChatFeatureProps> = ({ chatType }) => {
         const chatHistory = chat?.messages.slice(-chat.memoryLength) as IMessage[]
         const messagesToSend = [...chatHistory, userMessage]
 
-        switch (chatType) {
-            case 'chatbot':
-                dispatch(sendMessageThunk({
-                    messages: messagesToSend,
-                    prompt,
-                    model,
-                    chatId: chat?.id as string
-                }))
-                    .unwrap()
-                    .then((response) => {
-                        if (response) {
-                            streamResponse(response, dispatch, 'chatbot')
-                        }
-                    })
-
-                break
-            case 'qa':
-                break
-        }
+        dispatch(sendMessageThunk({
+            messages: messagesToSend,
+            prompt,
+            model,
+            chatId: chat?.id as string,
+            type: chatType
+        }))
+            .unwrap()
+            .then((response) => {
+                if (response) {
+                    streamResponse(response, dispatch, chatType)
+                }
+            })
     }
 
     return (

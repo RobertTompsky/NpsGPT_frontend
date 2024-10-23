@@ -4,18 +4,19 @@ import { IChatRequestPayload, setChatAIProcessing } from "../../model";
 export const sendMessageThunk = createAsyncThunk(
     'chats/sendMessage',
     async (req: IChatRequestPayload, { dispatch }) => {
-        const { messages, prompt, model, chatId } = req
+        const { messages, prompt, model, chatId, type } = req
 
         try {
             const response = await fetch(
-                'http://127.0.0.1:3000/chat/sendChatMessage',
+                `${import.meta.env.VITE_SERVER_URL}/chat/sendChatMessage`,
                 {
                     method: 'POST',
                     body: JSON.stringify({
                         messages,
                         prompt,
                         model,
-                        chatId
+                        chatId,
+                        type
                     }),
                     headers: {
                         'Content-Type': 'application/json',

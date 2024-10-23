@@ -30,6 +30,7 @@ export interface IChatFeatureProps {
 }
 
 export interface IChatRequestPayload {
+    type: IChatType
     messages: IMessage[]
     prompt: string
     model: string

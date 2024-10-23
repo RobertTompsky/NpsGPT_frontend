@@ -1,0 +1,1 @@
+export { DOC_TYPES } from "./data/data";
