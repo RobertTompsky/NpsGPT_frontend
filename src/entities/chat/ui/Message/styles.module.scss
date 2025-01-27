@@ -1,0 +1,43 @@
+$color-green: #00ff00;
+$color-grey: #1b1b1b;
+$color-black: rgb(0, 0, 0);
+
+@mixin message($align-self, $text-color, $bg-color, $border) {
+    padding: 8px 12px;
+    font-size: 14px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+
+    align-self: $align-self;
+    color: $text-color;
+    background-color: $bg-color;
+    border: $border;
+
+    .markDown {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+.sended {
+    @include message(
+        flex-end, 
+        $color-black, 
+        $color-green, 
+        0.25px solid $color-green
+    )
+} 
+
+.received {
+    @include message(
+        flex-start, 
+        $color-green, 
+        $color-grey, 
+        solid $color-green 0.25px
+    )
+}

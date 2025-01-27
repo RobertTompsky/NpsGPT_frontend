@@ -1,4 +1,4 @@
-export { DataBase } from "./DataBase/DataBase";
-export { Main } from "./Main/Main";
-export{ NotFound } from "./NotFound/NotFound";
-export{ SignIn } from "./SignIn/SignIn";
+export { DataBase } from "./DataBase";
+export { Main } from "./Main";
+export{ NotFound } from "./NotFound";
+export{ SignIn } from "./SignIn";

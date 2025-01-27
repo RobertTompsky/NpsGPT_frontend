@@ -1,1 +1,1 @@
-export { TextLoader } from "./TextLoader/TextLoader";
+export { TextLoader } from "./TextLoader";

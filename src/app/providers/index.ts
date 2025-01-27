@@ -1,3 +1,2 @@
-export { store, persistor } from "./store/store";
-
-export { router } from "./router/router";
+export { store, persistor } from "./store";
+export { router } from "./router";

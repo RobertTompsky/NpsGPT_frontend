@@ -1,0 +1,37 @@
+$default: #FFA500;
+$approve: #33FF33;
+$delete: #FF3333;
+
+@mixin button($bg-color) {
+    cursor: pointer;
+    //border: 0;
+    color: white;
+    line-height: 1.15;
+    font-family: "Anonymous Pro", monospace;
+    background: $bg-color;
+    padding: 4px 8px;
+    font-size: 14px;
+
+    &:disabled {
+        opacity: 0.5;
+        box-shadow: none;
+        cursor: auto;
+    }
+
+    &:hover {
+        outline: none;
+        box-shadow: $bg-color 0 0 0 0.5px;
+    }
+}
+
+.default {
+    @include button($default);
+}
+
+.approve {
+    @include button($approve);
+}
+
+.delete {
+    @include button($delete);
+}

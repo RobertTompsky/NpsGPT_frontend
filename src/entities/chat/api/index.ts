@@ -1,1 +1,1 @@
-export { sendMessageThunk } from "./thunks/thunks";
+export { sendMessageThunk } from "./thunks";
