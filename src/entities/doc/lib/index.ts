@@ -1,1 +1,1 @@
-export { DOC_TYPES } from "./data/data";
+export { DOC_TYPES } from "./data";

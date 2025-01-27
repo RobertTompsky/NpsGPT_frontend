@@ -1,1 +1,1 @@
-export { AddDocFeature } from "./AddDocFeature/AddDocFeature";
+export { AddDocFeature } from "./AddDocFeature";

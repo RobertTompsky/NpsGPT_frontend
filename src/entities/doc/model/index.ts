@@ -1,1 +1,1 @@
-export type { IDocInfo, IDocType } from './types/types'
+export type { IDocInfo, IDocType } from './types'

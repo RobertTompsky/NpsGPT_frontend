@@ -1,0 +1,13 @@
+$background-color: #33FF33;
+$font-size: 18px;
+
+.link {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-size: $font-size;
+
+    &:hover {
+        background:  $background-color;
+        color: black;
+    }
+}

@@ -1,7 +1,7 @@
 export { 
     selectChatsByType, 
     selectActiveChatByType 
-} from './selectors/selectors'
+} from './selectors'
 
 export type { 
     IChat, 
@@ -9,9 +9,8 @@ export type {
     IChatType, 
     IChatsState, 
     IMessage,
-    IChatFeatureProps,
     IChatRequestPayload
-} from './types/types'
+} from './types'
 
 export { 
     chatReducer, 
@@ -26,7 +25,7 @@ export {
     changeModel,
     addChatMessage,
     editPrompt 
-} from './slices/chatSlice'
+} from './slices'
 
 
 

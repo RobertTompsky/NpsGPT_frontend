@@ -1,1 +1,1 @@
-export { useDocInfo } from "./useDocInfo/useDocInfo";
+export { useDocInfo } from "./useDocInfo";

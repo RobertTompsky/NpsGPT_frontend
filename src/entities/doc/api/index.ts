@@ -1,1 +1,1 @@
-export { useAddDocsToVectorStoreMutation, useUploadFileMutation } from "./docApi/docApi";
+export { useAddDocsToVectorStoreMutation, useUploadFileMutation } from "./docApi";

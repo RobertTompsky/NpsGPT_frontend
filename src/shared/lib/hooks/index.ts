@@ -1,5 +1,5 @@
-export { useScrollToBottom } from "./useScrollToBottom/useScrollToBottom";
+export { useScrollToBottom } from "./useScrollToBottom";
 
-export { useAppDispatch, useAppSelector } from "./reduxHooks/reduxHooks";
+export { useAppDispatch, useAppSelector } from "./reduxHooks";
 
 

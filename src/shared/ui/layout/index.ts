@@ -1,2 +1,2 @@
-export { PageWrapper } from "./PageWrapper/PageWrapper";
-export { Container } from "./Container/Container";
+export { PageWrapper } from "./PageWrapper";
+export { Container } from "./Container";

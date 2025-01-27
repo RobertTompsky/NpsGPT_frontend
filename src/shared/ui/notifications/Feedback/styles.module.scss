@@ -1,0 +1,16 @@
+$color-success: #33FF33;
+$color-error: #FF3333;
+
+@mixin feedback ($color) {
+    font-size: 14px;
+    color: $color;
+    margin: 0;
+}
+
+.success {
+    @include feedback($color-success)
+}
+
+.error {
+    @include feedback($color-error)
+}
