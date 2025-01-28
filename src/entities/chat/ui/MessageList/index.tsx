@@ -7,7 +7,7 @@ import { Message } from '..';
 
 export const MessageList = ({ 
     messages, 
-    isProcessing = true
+    isProcessing
 }: { 
     messages: IMessage[], 
     isProcessing: boolean 
