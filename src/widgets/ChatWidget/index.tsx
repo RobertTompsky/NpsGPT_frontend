@@ -1,4 +1,4 @@
-import { IChatType, selectChatsByType } from '@/entities/chat/model';
+import { IChat, IChatType, selectChatsByType } from '@/entities/chat/model';
 import { MessageList } from '@/entities/chat/ui';
 import {
     ChangeChat,
@@ -17,7 +17,7 @@ import { Group } from '@/shared/ui/components';
 
 export const ChatWidget = ({ chatType }: { chatType: IChatType }) => {
     const chats = useAppSelector((state) => selectChatsByType(state, chatType))
-    const activeChat = chats.find(chat => chat.isActive === true)
+    const activeChat = chats.find(chat => chat.isActive === true) as IChat
     const hasMessages = activeChat?.messages && activeChat.messages.length > 0
     const hasChats = chats.length > 0
     const field = activeChat?.currentField
@@ -38,7 +38,12 @@ export const ChatWidget = ({ chatType }: { chatType: IChatType }) => {
             </section>
             {hasChats &&
                 <section className={styles.chatWidget__currentChat}>
-                    {hasMessages && <MessageList chatType={chatType} />}
+                    {hasMessages &&
+                        <MessageList
+                            messages={activeChat.messages}
+                            isProcessing={activeChat.isAIProcessing}
+                        />
+                    }
                     <div className={styles.chatWidget__currentChat_interactionPanel}>
                         <div className={styles.chatWidget__currentChat_settings}>
                             <ChangeCurrentField chatType={chatType} />

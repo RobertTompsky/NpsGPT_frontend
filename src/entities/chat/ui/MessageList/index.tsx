@@ -1,15 +1,17 @@
 import { useRef } from 'react';
-import { IChatType, IMessage, selectActiveChatByType } from '../../model';
-import { useAppSelector, useScrollToBottom } from '@/shared/lib/hooks';
+import { IMessage } from '../../model';
+import { useScrollToBottom } from '@/shared/lib/hooks';
 import styles from './styles.module.scss'
 import { TextLoader } from '@/shared/ui/loaders';
 import { Message } from '..';
 
-export const MessageList = ({ chatType }: { chatType: IChatType }) => {
-    const chat = useAppSelector((state) => selectActiveChatByType(state, chatType))
-    const messages = chat?.messages as IMessage[]
-    const isAIProcessing = chat?.isAIProcessing
-
+export const MessageList = ({ 
+    messages, 
+    isProcessing = true
+}: { 
+    messages: IMessage[], 
+    isProcessing: boolean 
+}) => {
     const messageListRef = useRef<HTMLElement>(null)
 
     useScrollToBottom(messageListRef, [
@@ -25,7 +27,7 @@ export const MessageList = ({ chatType }: { chatType: IChatType }) => {
                     key={index}
                 />
             ))}
-            {isAIProcessing && <TextLoader text='Ожидание ответа' />}
+            {isProcessing && <TextLoader text='Ожидание ответа' />}
         </nav>
     );
 };
