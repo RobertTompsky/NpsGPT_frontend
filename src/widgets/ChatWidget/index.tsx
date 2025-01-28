@@ -38,7 +38,12 @@ export const ChatWidget = ({ chatType }: { chatType: IChatType }) => {
             </section>
             {hasChats &&
                 <section className={styles.chatWidget__currentChat}>
-                    {hasMessages && <MessageList chatType={chatType} />}
+                    {hasMessages &&
+                        <MessageList
+                            messages={activeChat.messages}
+                            isProcessing={activeChat.isAIProcessing}
+                        />
+                    }
                     <div className={styles.chatWidget__currentChat_interactionPanel}>
                         <div className={styles.chatWidget__currentChat_settings}>
                             <ChangeCurrentField chatType={chatType} />
