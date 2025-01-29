@@ -4,12 +4,16 @@ import {
 } from "@reduxjs/toolkit";
 import { 
     IChat, 
-    IChatCurrentField, 
-    IChatsState, 
     IChatType, 
     IMessage 
 } from "..";
 import { MODELS } from "../../lib";
+
+interface IChatsState {
+    list: IChat[]
+    model: string
+    query: string
+}
 
 const chatSlice = createSlice({
     name: 'chats',
@@ -125,7 +129,7 @@ const chatSlice = createSlice({
         },
         changeCurrentField: (state, action: PayloadAction<{
             chatType: IChatType,
-            currentField: IChatCurrentField
+            currentField: IChat['currentField']
         }>) => {
             const { chatType, currentField } = action.payload
             const currentChat = state.list

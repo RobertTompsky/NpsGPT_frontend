@@ -1,7 +1,7 @@
 import { FIELDS } from '@/entities/chat/lib';
 import { 
     changeCurrentField, 
-    IChatCurrentField, 
+    IChat,
     IChatType, 
     selectActiveChatByType 
 } from '@/entities/chat/model';
@@ -23,7 +23,7 @@ export const ChangeCurrentField = ({ chatType }: { chatType: IChatType }) => {
             }))}
             value={field}
             onChange={(e) => {
-                const currentField = e.target.value as IChatCurrentField
+                const currentField = e.target.value as IChat['currentField']
                 dispatch(changeCurrentField({
                     chatType,
                     currentField

@@ -4,10 +4,8 @@ export {
 } from './selectors'
 
 export type { 
-    IChat, 
-    IChatCurrentField, 
-    IChatType, 
-    IChatsState, 
+    IChat,
+    IChatType,
     IMessage,
     IChatRequestPayload
 } from './types'
