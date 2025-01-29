@@ -1,6 +1,6 @@
 export interface IMessage {
     content: string
-    role: 'human' | 'ai' | 'system'
+    role: 'human' | 'ai'
 }
 
 export type IChatType = 'chatbot' | 'qa'
@@ -14,15 +14,9 @@ export interface IChat {
     messages: IMessage[]
     prompt: string
     memoryLength: number
-    currentField: IChatCurrentField
+    currentField: 'message' | 'prompt'
     isActive: boolean
     isAIProcessing: boolean
-}
-
-export interface IChatsState {
-    list: IChat[]
-    model: string
-    query: string
 }
 
 export interface IChatRequestPayload {

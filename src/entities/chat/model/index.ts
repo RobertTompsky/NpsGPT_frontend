@@ -5,9 +5,7 @@ export {
 
 export type { 
     IChat, 
-    IChatCurrentField, 
     IChatType, 
-    IChatsState, 
     IMessage,
     IChatRequestPayload
 } from './types'
