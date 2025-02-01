@@ -1,3 +1,5 @@
+export { useAgentStore } from './store/agents'
+
 export { 
     selectChatsByType, 
     selectActiveChatByType 
@@ -7,7 +9,8 @@ export type {
     IChat, 
     IChatType, 
     IMessage,
-    IChatRequestPayload
+    IChatRequestPayload,
+    IAgent
 } from './types'
 
 export { 
@@ -24,6 +27,7 @@ export {
     addChatMessage,
     editPrompt 
 } from './slices'
+
 
 
 

@@ -1,4 +1,4 @@
-import { addChatMessage, IChatType, setChatAIProcessing, streamChatAIMessage } from "@/entities/chat/model";
+import { addChatMessage, IChatType, setChatAIProcessing, streamChatAIMessage } from "@/entities/ai/model";
 import { getStreamDecoder } from "@/shared/lib/utils";
 import { ThunkDispatch, UnknownAction } from "@reduxjs/toolkit";
 

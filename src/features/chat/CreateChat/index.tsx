@@ -1,4 +1,4 @@
-import { createChat, IChatType } from '@/entities/chat/model';
+import { createChat, IChatType } from '@/entities/ai/model';
 import { Button, Group, Input } from '@/shared/ui/components';
 import { useState } from 'react';
 import { useAppDispatch } from '@/shared/lib/hooks';

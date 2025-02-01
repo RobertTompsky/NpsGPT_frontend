@@ -1,5 +1,5 @@
-import { MEMORY_LENGTH } from '@/entities/chat/lib';
-import { changeMemoryLength, IChatType, selectActiveChatByType } from '@/entities/chat/model';
+import { MEMORY_LENGTH } from '@/entities/ai/lib';
+import { IChatType, selectActiveChatByType, changeMemoryLength } from '@/entities/ai/model';
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks';
 import { Select } from '@/shared/ui/components';
 

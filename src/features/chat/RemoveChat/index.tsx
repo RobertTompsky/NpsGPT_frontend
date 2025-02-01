@@ -1,4 +1,4 @@
-import { IChatType, removeChat, selectChatsByType, setChatActive } from '@/entities/chat/model';
+import { IChatType, removeChat, selectChatsByType, setChatActive } from '@/entities/ai/model';
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks';
 import { Button } from '@/shared/ui/components';
 

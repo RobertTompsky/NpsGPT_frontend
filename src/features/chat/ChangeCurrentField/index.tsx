@@ -1,10 +1,10 @@
-import { FIELDS } from '@/entities/chat/lib';
+import { FIELDS } from '@/entities/ai/lib';
 import { 
     changeCurrentField, 
     IChat,
     IChatType, 
     selectActiveChatByType 
-} from '@/entities/chat/model';
+} from '@/entities/ai/model';
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks';
 import { Select } from '@/shared/ui/components';
 

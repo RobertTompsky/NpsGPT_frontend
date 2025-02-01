@@ -1,4 +1,4 @@
-import { searchMessage } from '@/entities/chat/model';
+import { searchMessage } from '@/entities/ai/model';
 import { useAppDispatch } from '@/shared/lib/hooks';
 import { Input } from '@/shared/ui/components';
 

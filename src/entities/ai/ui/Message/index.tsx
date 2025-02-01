@@ -27,8 +27,8 @@ export const Message = ({ message }: { message: IMessage}) => {
                 } else {
                     return (
                         <div key={index}>
-                            <SyntaxHighlighter language='javascript' style={okaidia}>
-                                {part.trim()}
+                            <SyntaxHighlighter language='jsx' style={okaidia}>
+                                {part}
                             </SyntaxHighlighter>
                         </div>
                     )

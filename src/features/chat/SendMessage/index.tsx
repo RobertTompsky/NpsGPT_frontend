@@ -6,10 +6,10 @@ import {
     IMessage, 
     selectActiveChatByType, 
     setChatAIProcessing 
-} from '@/entities/chat/model';
+} from '@/entities/ai/model';
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks';
-import { sendMessageThunk } from '@/entities/chat/api';
-import { streamResponse } from '@/entities/chat/lib';
+import { sendMessageThunk } from '@/entities/ai/api';
+import { streamResponse } from '@/entities/ai/lib';
 
 export const SendMessage = ({ chatType }: { chatType: IChatType }) => {
     const [content, setContent] = useState<string>('')

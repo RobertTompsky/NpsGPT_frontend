@@ -1,5 +1,5 @@
-import { IChatType, selectChatsByType } from '@/entities/chat/model';
-import { MessageList } from '@/entities/chat/ui';
+import { IChatType, selectChatsByType } from '@/entities/ai/model';
+import { MessageList } from '@/entities/ai/ui';
 import {
     ChangeChat,
     ChangeCurrentField,

@@ -1,6 +1,6 @@
 import { Button, Group, TextArea } from '@/shared/ui/components';
 import { useState } from 'react';
-import { editPrompt, IChatType, selectActiveChatByType } from '@/entities/chat/model';
+import { editPrompt, IChatType, selectActiveChatByType } from '@/entities/ai/model';
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks';
 
 export const EditPrompt = ({ chatType }: { chatType: IChatType }) => {

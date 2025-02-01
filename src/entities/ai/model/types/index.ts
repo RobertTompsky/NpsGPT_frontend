@@ -5,8 +5,6 @@ export interface IMessage {
 
 export type IChatType = 'chatbot' | 'qa'
 
-export type IChatCurrentField = 'message' | 'prompt'
-
 export interface IChat {
     id: string
     name: string
@@ -27,3 +25,9 @@ export interface IChatRequestPayload {
     chatId: string
 }
 
+export interface IAgent {
+    id: string
+    name: string
+    messages: IMessage[]
+    summary: string[]
+}

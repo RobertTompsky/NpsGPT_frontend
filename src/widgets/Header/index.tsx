@@ -18,6 +18,10 @@ export const Header = () => {
                             to={RoutePaths.database}
                             children='База данных'
                         />
+                        <AppLink
+                            to={RoutePaths.agents}
+                            children='Агенты'
+                        />
                     </nav>
                 </div>
             </Container>

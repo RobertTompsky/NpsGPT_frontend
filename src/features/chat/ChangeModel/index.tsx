@@ -1,5 +1,5 @@
-import { MODELS } from '@/entities/chat/lib';
-import { changeModel } from '@/entities/chat/model';
+import { MODELS } from '@/entities/ai/lib';
+import { changeModel } from '@/entities/ai/model';
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks';
 import { Select } from '@/shared/ui/components';
 

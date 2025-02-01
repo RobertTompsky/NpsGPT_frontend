@@ -1,7 +1,6 @@
 .messageList {
     max-height: 650px;
-    overflow-x: auto;
-    overflow-y: auto;
+    overflow: auto;
     display: flex;
     flex-direction: column;
     gap: 20px;

@@ -1,18 +1,20 @@
-import { DataBase, Main, SignIn } from "@/pages"
+import { Agents, DataBase, Main, SignIn } from "@/pages"
 import { RouteObject } from "react-router-dom"
 
 enum RouteNames {
     SIGN_IN = 'sign_in',
 
     MAIN = 'main',
-    DATABASE = 'database'
+    DATABASE = 'database',
+    AGENTS = 'agents'
 }
 
 export const RoutePaths: Record<RouteNames, string> = {
     [RouteNames.SIGN_IN]: '/sign_in',
 
     [RouteNames.MAIN]: '/',
-    [RouteNames.DATABASE]: '/database'
+    [RouteNames.DATABASE]: '/database',
+    [RouteNames.AGENTS]: '/agents'
 }
 
 export const RouteConfig: Record<RouteNames, RouteObject> = {
@@ -27,6 +29,10 @@ export const RouteConfig: Record<RouteNames, RouteObject> = {
     [RouteNames.DATABASE]: {
         path: RoutePaths.database,
         Component: DataBase
+    },
+    [RouteNames.AGENTS]: {
+        path: RoutePaths.agents,
+        Component: Agents
     }
 }
 

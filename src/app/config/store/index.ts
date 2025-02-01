@@ -1,4 +1,4 @@
-import { chatReducer } from "@/entities/chat/model"
+import { chatReducer } from "@/entities/ai/model"
 import { api } from "@/shared/api"
 import { combineReducers } from "@reduxjs/toolkit"
 import { persistReducer } from "redux-persist"

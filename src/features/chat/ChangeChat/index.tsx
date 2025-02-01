@@ -1,5 +1,5 @@
-import { IChatType, selectChatsByType, setChatActive} from '@/entities/chat/model';
-import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks';
+import { IChatType, selectChatsByType, setChatActive } from '@/entities/ai/model';
+import { useAppSelector, useAppDispatch } from '@/shared/lib/hooks';
 import { Select } from '@/shared/ui/components';
 
 export const ChangeChat = ({ chatType }: { chatType: IChatType }) => {
