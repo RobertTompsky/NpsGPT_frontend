@@ -10,7 +10,8 @@ export type {
     IChatType, 
     IMessage,
     IChatRequestPayload,
-    IAgent
+    IAgent,
+    IUserInfo
 } from './types'
 
 export { 

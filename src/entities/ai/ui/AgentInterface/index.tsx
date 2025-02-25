@@ -1,5 +1,5 @@
 import { Button, Group, TextArea } from '@/shared/ui/components';
-import { useAgentStore } from '../../model';
+import { IUserInfo, useAgentStore } from '../../model';
 import { MessageList } from '../MessageList';
 import styles from './styles.module.scss'
 import { useState } from 'react';
@@ -12,10 +12,12 @@ export const AgentInterface = () => {
     const {
         agents,
         currentAgentId,
+        userInfo,
         deleteAgent,
         addMessage,
         streamLLMResponse,
-        addSummaryPoint
+        addSummaryPoint,
+        setUserInfo
     } = useAgentStore()
 
     const agent = agents.find(a => a.id === currentAgentId)
@@ -30,17 +32,18 @@ export const AgentInterface = () => {
             setIsProcessing(true)
             setIsDisabled(true)
 
+            const messagesToSend = [...agent!.messages, { role: 'human', content: input }]
+
             await fetchEventSource('http://localhost:3000/callAgent', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    input,
+                    messages: messagesToSend,
+                    summary: agent?.summary,
+                    userInfo,
                     threadId: agent?.id
-                } as {
-                    input: string,
-                    threadId: string
                 }),
                 onopen: async () => {
                     setIsProcessing(false)
@@ -59,8 +62,13 @@ export const AgentInterface = () => {
                             }
                             break
                             
-                        case 'summarize_conversation':
+                        case 'summaryPoint':
                             addSummaryPoint(message.data)
+                            break
+
+                        case 'userInfo':
+                            const info = JSON.parse(message.data) as IUserInfo
+                            setUserInfo(info)
                             break
 
                         default:

@@ -7,7 +7,6 @@ export const Summary = () => {
 
     return (
         <nav className={styles.summary}>
-            <h2>Сводка</h2>
             <ol>
                 {summary && summary.length > 0
                     ?

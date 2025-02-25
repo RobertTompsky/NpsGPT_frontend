@@ -1,4 +1,4 @@
-$color: #00ff00;
+$color-green: #00ff00;
 
 @mixin flexColumn($gap) {
     display: flex;
@@ -6,28 +6,36 @@ $color: #00ff00;
     gap: $gap;
 }
 
-.summary {
+.userInfo {
     width: 30%;
+    box-sizing: border-box;
     @include flexColumn(10px);
-    color: $color;
     max-height: 780px;
     overflow: auto;
+
+    p {
+        margin: 0;
+        font-size: 16px;
+        color: white;
+        font-weight: bold;
+    }
 
     ol {
         margin: 0;
         padding: 0;
         font-size: 14px;
         list-style-type: none;
-        @include flexColumn(10px); 
+        @include flexColumn(10px);
 
         li {
             background-color: #252526;
             padding: 10px;
-            border-left: 1px solid $color;
+            border-left: 1px solid $color-green;
             border-radius: 2px;
+            color: $color-green;
 
             &:hover {
-                background-color: $color;
+                background-color: $color-green;
                 color: #000;
                 &::before {
                     color: #000;
@@ -36,7 +44,7 @@ $color: #00ff00;
 
             &::before {
                 content: ">";
-                color: $color;
+                color: $color-green;
                 margin-right: 10px;
             }
         }

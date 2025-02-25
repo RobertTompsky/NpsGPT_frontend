@@ -29,5 +29,13 @@ export interface IAgent {
     id: string
     name: string
     messages: IMessage[]
+    messageCount: number
     summary: string[]
+}
+
+export interface IUserInfo {
+    name: string;
+    gender: string;
+    interests: string[];
+    chatPreferences: string[];
 }

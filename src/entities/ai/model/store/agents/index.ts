@@ -1,28 +1,34 @@
 import { create } from "zustand";
-import { IAgent, IMessage } from "../../types";
+import { IAgent, IMessage, IUserInfo } from "../../types";
 
 interface AgentState {
     agents: IAgent[]
     currentAgentId: string | null
+    userInfo: IUserInfo | null
     createAgent: (agent: IAgent) => void
     deleteAgent: (agentId: string) => void
     setCurrent: (agentId: string) => void
     addMessage: (message: IMessage) => void
     streamLLMResponse: (chunk: string) => void
     addSummaryPoint: (newPoint: string) => void
+    setUserInfo: (info: IUserInfo) => void
 }
 
 export const useAgentStore = create<AgentState>((set) => ({
     agents: [],
     currentAgentId: null,
-    createAgent: (agent: IAgent) => set(({ agents }) => ({
+    userInfo: null,
+    createAgent: (agent) => set(({ agents }) => ({
         agents: [...agents, agent],
         currentAgentId: agent.id
     })),
-    setCurrent: (agentId: string) => set(() => ({
+    setCurrent: (agentId) => set(() => ({
         currentAgentId: agentId
     })),
-    deleteAgent: (agentId: string) => set(({ agents }) => {
+    setUserInfo: (info) => set(() => ({
+        userInfo: info
+    })),
+    deleteAgent: (agentId) => set(({ agents }) => {
         const updatedAgents = agents.filter(agent => agent.id !== agentId);
 
         const newCurrentAgentId = updatedAgents.length > 0
@@ -34,21 +40,25 @@ export const useAgentStore = create<AgentState>((set) => ({
             currentAgentId: newCurrentAgentId
         };
     }),
-    addMessage: (message: IMessage) => set(({ agents, currentAgentId }) => {
-        const updatedAgents = agents.map(agent =>
-            agent.id === currentAgentId
-                ? {
+    addMessage: (message) => set(({ agents, currentAgentId }) => {
+        const updatedAgents = agents.map(agent => {
+            if (agent.id === currentAgentId) {
+                const updatedMessages = [...agent.messages, message]
+                return {
                     ...agent,
-                    messages: [...agent.messages, message]
+                    messages: updatedMessages,
+                    messageCount: updatedMessages.length
                 }
-                : agent
+            }
+            return agent
+        }
         );
 
         return {
             agents: updatedAgents
         };
     }),
-    streamLLMResponse: (chunk: string) => set(({ agents, currentAgentId }) => {
+    streamLLMResponse: (chunk) => set(({ agents, currentAgentId }) => {
         const updatedAgents = agents.map(agent => {
             if (agent.id === currentAgentId) {
                 const updatedMessages = [...agent.messages];
@@ -68,9 +78,10 @@ export const useAgentStore = create<AgentState>((set) => ({
             agents: updatedAgents
         };
     }),
-    addSummaryPoint: (newPoint: string) => set(({ agents, currentAgentId }) => {
+    addSummaryPoint: (newPoint) => set(({ agents, currentAgentId }) => {
         const updatedAgents = agents.map(agent => {
             if (agent.id === currentAgentId) {
+                const updatedMessageCount = agent.messageCount !== 0 ? 0 : agent.messageCount
                 return {
                     ...agent,
                     summary: agent.summary.includes(newPoint)
@@ -78,7 +89,8 @@ export const useAgentStore = create<AgentState>((set) => ({
                             ? newPoint
                             : point
                         )
-                        : [...agent.summary, newPoint]
+                        : [...agent.summary, newPoint],
+                    messageCount: updatedMessageCount
                 };
             }
             return agent;

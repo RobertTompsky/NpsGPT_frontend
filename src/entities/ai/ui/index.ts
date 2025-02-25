@@ -1,3 +1,4 @@
+export { UserInfo } from "./UserInfo";
 export { AgentInterface } from "./AgentInterface";
 export { Summary } from "./Summary";
 export { Message } from "./Message";
